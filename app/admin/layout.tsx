@@ -118,7 +118,7 @@ export default function AdminLayout({
       <AdminSidebar pathname={pathname} user={user} onLogout={handleLogout} />
       <SidebarInset className="bg-background">
         {/* Modern Header */}
-        <header className="sticky top-0 z-20 flex h-20 items-center gap-4 border-b border-border/40 bg-sidebar backdrop-blur-md px-8">
+        <header className="sticky top-0 z-20 flex h-20 items-center gap-4 border-b border-border/40 bg-background backdrop-blur-md px-8">
           <div className="flex items-center gap-4 flex-1">
             <SidebarTrigger className="md:hidden" />
 
@@ -214,7 +214,7 @@ export default function AdminLayout({
         </header>
 
         {/* Main Content Area */}
-        <main className="flex-1 p-8 overflow-y-auto bg-sidebar">
+        <main className="flex-1 p-8 overflow-y-auto bg-background">
           <div className="max-w-7xl mx-auto space-y-8">{children}</div>
         </main>
       </SidebarInset>
@@ -234,8 +234,8 @@ function AdminSidebar({ pathname, user, onLogout }: { pathname: string; user: an
   }
 
   return (
-    <Sidebar collapsible="icon" className="border-r border-border bg-sidebar z-40">
-      <SidebarHeader className="h-auto flex flex-col gap-4 px-4 py-4 border-b border-border/60 overflow-visible">
+    <Sidebar collapsible="icon" className="border-r border-border bg-background z-40">
+      <SidebarHeader className="h-auto flex flex-col gap-4 px-4 py-4 border-b border-border/60 overflow-visible bg-background">
         <div
           className={cn(
             "flex items-center gap-3 transition-all",
@@ -272,7 +272,7 @@ function AdminSidebar({ pathname, user, onLogout }: { pathname: string; user: an
         </button>
       </SidebarHeader>
 
-      <SidebarContent className="px-3 py-6 overflow-y-auto overflow-x-visible [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-slate-300 [&::-webkit-scrollbar-thumb]:rounded-full hover:[&::-webkit-scrollbar-thumb]:bg-slate-400">
+      <SidebarContent className="px-3 py-6 overflow-y-auto overflow-x-visible [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-slate-300 [&::-webkit-scrollbar-thumb]:rounded-full hover:[&::-webkit-scrollbar-thumb]:bg-slate-400 bg-background">
         <SidebarMenu className="gap-2">
           {menuGroups.map((item) => {
             if (item.type === "single") {
@@ -288,6 +288,7 @@ function AdminSidebar({ pathname, user, onLogout }: { pathname: string; user: an
                       isActive && "!bg-green-600 !text-white hover:!bg-green-600/90",
                       !isActive && "hover:!bg-green-600/10 hover:!text-green-700 text-muted-foreground"
                     )}
+                    
                     tooltip={{
                       children: item.label,
                       className:
@@ -332,7 +333,7 @@ function AdminSidebar({ pathname, user, onLogout }: { pathname: string; user: an
       </SidebarContent>
 
       {/* Botón de logout en mobile para Sidebar */}
-      <SidebarFooter className="p-4 border-t border-slate-100 md:hidden">
+      <SidebarFooter className="p-4 border-t border-slate-100 md:hidden bg-background">
         <Button
           variant="ghost"
           size="sm"
@@ -438,10 +439,10 @@ function SidebarGroupItem({
                   key={child.label}
                   href={child.href}
                   onClick={() => setShowFloatingMenu(false)}
-                  className={cn(
-                    "flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium transition-all",
+                 className={cn(
+                      "flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-bold transition-all tracking-wide",
                     isChildActive
-                      ? "bg-green-600 text-white"
+                      ? "bg-green-600 text-white font-bold"
                       : "text-muted-foreground hover:bg-green-600/10 hover:text-green-700"
                   )}
                 >
