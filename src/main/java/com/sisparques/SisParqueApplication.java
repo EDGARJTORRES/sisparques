@@ -1,6 +1,5 @@
 package com.sisparques;
 
-import com.sisparques.entity.Usuario;
 import com.sisparques.entity.Rol;
 import com.sisparques.repository.UsuarioRepository;
 import com.sisparques.repository.RolRepository;
@@ -20,11 +19,25 @@ public class SisParqueApplication {
     @Bean
     CommandLineRunner initData(UsuarioRepository usuarioRepository, RolRepository rolRepository, PasswordEncoder passwordEncoder) {
         return args -> {
-            // Inicializar Roles (solo si no existen)
+
             if (rolRepository.count() == 0) {
-                rolRepository.save(new Rol(1, "admin", "Super administrador del sistema"));
-                rolRepository.save(new Rol(2, "Obrero", "Persona encargada del mantenimiento de los parques"));
-                rolRepository.save(new Rol(3, "ciudadano", "Ciudadano que reporta problemas en los parques"));
+
+                Rol admin = new Rol();
+                admin.setNombreRol("admin");
+                admin.setDescripcion("Super administrador del sistema");
+
+                Rol obrero = new Rol();
+                obrero.setNombreRol("Obrero");
+                obrero.setDescripcion("Persona encargada del mantenimiento de los parques");
+
+                Rol ciudadano = new Rol();
+                ciudadano.setNombreRol("ciudadano");
+                ciudadano.setDescripcion("Ciudadano que reporta problemas en los parques");
+
+                rolRepository.save(admin);
+                rolRepository.save(obrero);
+                rolRepository.save(ciudadano);
+
                 System.out.println(">>> Roles inicializados correctamente");
             }
         };

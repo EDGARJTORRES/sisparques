@@ -181,7 +181,7 @@ export default function AdminDashboard() {
             iconBg: "bg-emerald-100/50"
           },
         ].map((stat) => (
-          <Card key={stat.title} className="border-0 shadow-xl rounded-2xl overflow-hidden relative group">
+          <Card key={stat.title} className="shadow-xl rounded-2xl overflow-hidden relative group dark:bg-card">
             <CardContent className="py-2 px-4">
               <div className="flex items-start justify-between">
                 <div className={`${stat.iconBg} ${stat.color} p-2 rounded-xl mb-4`}>
@@ -207,7 +207,7 @@ export default function AdminDashboard() {
 
         {/* LEFT */}
         <div className="lg:col-span-8 backdrop-blur-xl rounded-3xl shadow-xl bg-card h-full">
-          <Card className="h-full border-0 overflow-hidden flex flex-col"> 
+          <Card className="h-full  overflow-hidden flex flex-col"> 
             
             <CardHeader className="px-8 border-b border-border flex flex-row items-center justify-between"> 
               <CardTitle className="text-xl font-bold text-foreground">
