@@ -119,7 +119,7 @@ export default function AdminDashboard() {
         <div>
           <h1 className="text-3xl font-black flex items-center gap-3">
             <Hand  className="h-8 w-8 text-green-600"/>
-             ¡Bienvenido, {user?.nombre || "Admin"}! 
+             ¡Bienvenido, {user?.nombre || "Administrador"}! 
           </h1>
           <p className="text-muted-foreground">
             Este es el resumen de lo que está pasando hoy en <span className="text-green-600 font-bold">SISPARQUES</span>.

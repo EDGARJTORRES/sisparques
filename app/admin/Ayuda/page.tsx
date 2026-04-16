@@ -84,7 +84,7 @@ export default function AyudaPage() {
   return (
     <div className="space-y-10 pb-20">
       {/* HERO SECTION */}
-      <div className="relative overflow-hidden rounded-[40px] bg-card p-12 text-white shadow-2xl ring-1 ring-primary/20">
+      <div className="relative overflow-hidden rounded-[40px] bg-card p-12 text-white ring-1 ring-primary/20">
         <div className="absolute top-0 right-0 -mr-20 -mt-20 h-96 w-96 rounded-full bg-white/10 blur-3xl" />
         <div className="absolute bottom-0 left-0 -ml-20 -mb-20 h-64 w-64 rounded-full bg-black/10 blur-3xl" />
         

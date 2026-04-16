@@ -22,9 +22,9 @@ public class SisParqueApplication {
 
             if (rolRepository.count() == 0) {
 
-                Rol admin = new Rol();
-                admin.setNombreRol("admin");
-                admin.setDescripcion("Super administrador del sistema");
+                Rol administrador = new Rol();
+                administrador.setNombreRol("administrador");
+                administrador.setDescripcion("Super administrador del sistema");
 
                 Rol obrero = new Rol();
                 obrero.setNombreRol("Obrero");
@@ -34,7 +34,7 @@ public class SisParqueApplication {
                 ciudadano.setNombreRol("ciudadano");
                 ciudadano.setDescripcion("Ciudadano que reporta problemas en los parques");
 
-                rolRepository.save(admin);
+                rolRepository.save(administrador);
                 rolRepository.save(obrero);
                 rolRepository.save(ciudadano);
 

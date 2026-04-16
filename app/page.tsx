@@ -56,15 +56,14 @@ export default function LoginPage() {
 
             <div>
               <h1 className="text-5xl font-bold leading-tight">
-                Sistema de
+                Sistema Informático de
                 <br />
-                Mantenimiento
+                Gestión de Parques y Jardines v1.0
                 <br />
-                de Parques
               </h1>
 
               <p className="mt-4 text-lg text-white/70">
-                Gestión integral de áreas verdes en tiempo real
+                Gestión de Mantenimiento de áreas verdes en tiempo real
               </p>
             </div>
 
